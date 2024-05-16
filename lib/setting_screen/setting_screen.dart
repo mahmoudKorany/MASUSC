@@ -144,9 +144,9 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginStates>(
       builder: (context, state) {
-        emailController.text = LoginCubit.get(context).currentUser!.email!;
-        phoneController.text = LoginCubit.get(context).currentUser!.phone!;
-        userNamedController.text = LoginCubit.get(context).currentUser!.name!;
+        emailController.text = LoginCubit.get(context).currentUser?.email??'';
+        phoneController.text = LoginCubit.get(context).currentUser?.phone??'';
+        userNamedController.text = LoginCubit.get(context).currentUser?.name??'';
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -168,7 +168,7 @@ class _SettingScreenState extends State<SettingScreen> {
                 SizedBox(
                   width: MediaQuery.of(context).size.width / 1.5,
                   child: Text(
-                    'Hello , ${LoginCubit.get(context).currentUser!.name!}',
+                    'Hello , ${LoginCubit.get(context).currentUser?.name??''}',
                     maxLines: 1,
                     style: TextStyle(
                       color: HexColor('ca0000'),
@@ -335,6 +335,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                 ),
               ),
+              if(LoginCubit.get(context).currentUser != null)
               SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
                 child: Column(
@@ -610,7 +611,9 @@ class _SettingScreenState extends State<SettingScreen> {
                     ),
                   ],
                 ),
-              ),
+              )
+              else
+                loading(),
             ],
           ),
         );
