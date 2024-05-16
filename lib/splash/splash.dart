@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:masusc/home/cubit/cubit.dart';
 import 'package:masusc/home/cubit/states.dart';
+import 'package:masusc/login_screen/login_cubit/login_cubit.dart';
+import 'package:masusc/login_screen/login_cubit/login_states.dart';
 import 'package:masusc/main.dart';
 import 'package:masusc/sessions_screen/cubit/sessions_cubit.dart';
 import 'package:masusc/sessions_screen/cubit/sessions_states.dart';
@@ -56,18 +58,23 @@ class _SplashState extends State<Splash> {
         return BlocConsumer<SessionsCubit, SessionsStates>(
           listener: (context, state) {},
           builder: (context, state) {
-            return AnimatedOpacity(
-              opacity: currentOpacity,
-              duration: Duration(milliseconds: milliseconds),
-              child: Container(
-                  height: 400,
-                  color: Colors.white,
-                  child: Image.asset(
-                    'assets/images/SplashScreen.jpg',
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    fit: BoxFit.cover,
-                  )),
+            return BlocConsumer<LoginCubit, LoginStates>(
+              listener: (context, state) {},
+              builder: (context, state) {
+                return AnimatedOpacity(
+                  opacity: currentOpacity,
+                  duration: Duration(milliseconds: milliseconds),
+                  child: Container(
+                      height: 400,
+                      color: Colors.white,
+                      child: Image.asset(
+                        'assets/images/SplashScreen.jpg',
+                        height: MediaQuery.of(context).size.height,
+                        width: MediaQuery.of(context).size.width,
+                        fit: BoxFit.cover,
+                      )),
+                );
+              },
             );
           },
         );
