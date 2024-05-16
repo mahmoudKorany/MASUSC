@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "723697751771",
+    "firebase_url": "https://masusc-bd020-default-rtdb.firebaseio.com",
+    "project_id": "masusc-bd020",
+    "storage_bucket": "masusc-bd020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723697751771:android:9b7eb4fc90ea5449ae5efe",
+        "android_client_info": {
+          "package_name": "com.masusc.ma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723697751771-jikt95sb9v42aa8bc7tec2v2g44cndmd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.masusc.ma",
+            "certificate_hash": "c7501a7b7d605499fc0a3898db2ef24577a5de22"
+          }
+        },
+        {
+          "client_id": "723697751771-upb1m20nhiab0n6d29c3scirauijdppe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFby_8zl__p6ScLS6NlgmUjcfwrNbZgmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723697751771-upb1m20nhiab0n6d29c3scirauijdppe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "723697751771-n3p18vso5ej38sj952o5uuragsqq6k7v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.masusc"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
