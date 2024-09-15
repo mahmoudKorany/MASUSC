@@ -183,13 +183,8 @@ class _ProfileTeamScreenState extends State<ProfileTeamScreen> {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MyCustomRoute(
-                                    builder: (context) => ShowPrizeScreen(
-                                        image: 'https://${widget.date.image!}'),
-                                  ),
-                                );
+                               navigateTo(context: context, widget:  ShowPrizeScreen(
+                                   image: 'https://${widget.date.image!}'),);
                               },
                               child: CircleAvatar(
                                 backgroundColor: HexColor('cecece'),

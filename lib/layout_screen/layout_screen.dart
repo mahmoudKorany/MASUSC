@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math'show pi;
 
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
@@ -23,6 +24,8 @@ class _LayoutScreenState extends State<LayoutScreen> {
   late double currentOpacity;
   @override
   void initState() {
+  if(Platform.isAndroid)
+  {
     currentOpacity = 0;
     Future.delayed(const Duration(milliseconds: 100), () {})
         .then((value) async {
@@ -30,6 +33,9 @@ class _LayoutScreenState extends State<LayoutScreen> {
         currentOpacity = 1;
       });
     });
+  }else{
+    currentOpacity = 1;
+  }
     super.initState();
   }
   @override
@@ -40,7 +46,7 @@ class _LayoutScreenState extends State<LayoutScreen> {
         var cubit = LayOutCubit.get(context);
         return AnimatedOpacity(
           opacity: currentOpacity,
-          duration: const Duration(milliseconds: 3000),
+          duration: Platform.isIOS ? const Duration(milliseconds: 0) : const Duration(milliseconds: 3000),
           child: Scaffold(
             body: cubit.screens[cubit.currentIndex],
             backgroundColor: Colors.white,

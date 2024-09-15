@@ -427,13 +427,9 @@ class _EventScreenState extends State<EventScreen> with TickerProviderStateMixin
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MyCustomRoute(
-                                                  builder: (context) =>
-                                                      EventDetail(
-                                                          data: cubit.eventItem!.data![
-                                                          index1])));
+                                          navigateTo(context: context, widget:   EventDetail(
+                                              data: cubit.eventItem!.data![
+                                              index1]),);
                                         },
                                         child: Card(
                                             elevation: 5,
@@ -667,13 +663,9 @@ class _EventScreenState extends State<EventScreen> with TickerProviderStateMixin
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MyCustomRoute(
-                                                  builder: (context) =>
-                                                      EventDetail(
-                                                          data: technicalEvent[
-                                                          index1])));
+                                        navigateTo(context: context, widget:  EventDetail(
+                                            data: technicalEvent[
+                                            index1]),);
                                         },
                                         child: Card(
                                             elevation: 5,
@@ -907,13 +899,9 @@ class _EventScreenState extends State<EventScreen> with TickerProviderStateMixin
                                       ),
                                       InkWell(
                                         onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MyCustomRoute(
-                                                  builder: (context) =>
-                                                      EventDetail(
-                                                          data: nonTechnicalEvent[
-                                                          index1])));
+                                        navigateTo(context: context, widget: EventDetail(
+                                            data: nonTechnicalEvent[
+                                            index1]));
                                         },
                                         child: Card(
                                             elevation: 5,

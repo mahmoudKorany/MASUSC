@@ -527,12 +527,9 @@ class _EditSessionsScreenState extends State<EditSessionsScreen> {
                                       Expanded(
                                         child: InkWell(
                                           onTap: () {
-                                            Navigator.push(context,
-                                                MyCustomRoute(
-                                                    builder: (context) =>
-                                                        EditSessionScreen(
-                                                          data: (cubit.sessions
-                                                              ?.data![index])!,)));
+                                           navigateTo(context: context, widget: EditSessionScreen(
+                                             data: (cubit.sessions
+                                                 ?.data![index])!,),);
                                           },
                                           child: Center(
                                             child: Container(

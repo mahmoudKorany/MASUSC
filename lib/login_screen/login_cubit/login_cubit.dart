@@ -139,8 +139,7 @@ class LoginCubit extends Cubit<LoginStates> {
       await CacheHelper.saveData(key: 'userUid', value: value.user!.uid)
           .then((value) async {
             showToast(msg: 'Login done successfully', state: MsgState.success);
-        Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => const LayoutScreen()));
+       navigateAndFinish(context,  const LayoutScreen(),);
         emit(LoginSuccess());
         uid = await CacheHelper.getData(key: 'userUid');
       });

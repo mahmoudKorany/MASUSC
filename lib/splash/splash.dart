@@ -7,6 +7,7 @@ import 'package:masusc/login_screen/login_cubit/login_states.dart';
 import 'package:masusc/main.dart';
 import 'package:masusc/sessions_screen/cubit/sessions_cubit.dart';
 import 'package:masusc/sessions_screen/cubit/sessions_states.dart';
+import 'package:masusc/shared/shared_component/component.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -43,8 +44,7 @@ class _SplashState extends State<Splash> {
         });
         await Future.delayed(const Duration(milliseconds: 1000), () {})
             .then((value) {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => startScreen!));
+        navigateAndFinish(context, startScreen!);
         });
       });
     });

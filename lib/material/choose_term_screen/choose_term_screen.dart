@@ -73,11 +73,7 @@ class ChooseTermScreen extends StatelessWidget {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MyCustomRoute(
-                                  builder: (context) =>
-                                      const ChooseGradeScreen(isFirstTerm: true)));
+                          navigateTo(context: context, widget:  const ChooseGradeScreen(isFirstTerm: true));
                         },
                         child: Container(
                           height: 45.h,
@@ -106,11 +102,7 @@ class ChooseTermScreen extends StatelessWidget {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MyCustomRoute(
-                                  builder: (context) =>
-                                      const ChooseGradeScreen(isFirstTerm: false)));
+                          navigateTo(context: context, widget: const ChooseGradeScreen(isFirstTerm: false));
                         },
                         child: Container(
                           height: 45.h,

@@ -168,14 +168,9 @@ class PriceScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MyCustomRoute(
-                          builder: (context) => ShowPrizeScreen(
-                            image:prices.data?[index].image !=null ?'https://${prices.data?[index].image}' :'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg',
-                          ),
-                        ),
-                      );
+                      navigateTo(context: context, widget: ShowPrizeScreen(
+                        image:prices.data?[index].image !=null ?'https://${prices.data?[index].image}' :'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg',
+                      ),);
                     },
                     child: Card(
                         elevation: 5,

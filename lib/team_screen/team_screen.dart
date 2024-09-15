@@ -320,7 +320,7 @@ class _TeamScreenState extends State<TeamScreen> {
                                 GestureDetector(
                                   onTap: ()
                                   {
-                                    Navigator.push(context, MyCustomRoute(builder: (context) => ProfileTeamScreen(date: presidency[index],fromOther: false,)));
+                                    navigateTo(context: context, widget: ProfileTeamScreen(date: presidency[index],fromOther: false,),);
                                   },
                                   child: Container(
                                     width: 140.w,
@@ -493,7 +493,7 @@ class _TeamScreenState extends State<TeamScreen> {
                                 GestureDetector(
                                   onTap: ()
                                   {
-                                    Navigator.push(context, MyCustomRoute(builder: (context) =>ProfileTeamScreen(date: highBoard[index2],fromOther: true,)));
+                                    navigateTo(context: context, widget: ProfileTeamScreen(date: highBoard[index2],fromOther: true,),);
                                   },
                                   child: Container(
                                     width: 140.w,
@@ -666,7 +666,7 @@ class _TeamScreenState extends State<TeamScreen> {
                                 GestureDetector(
                                   onTap: ()
                                   {
-                                    Navigator.push(context, MyCustomRoute(builder: (context) =>ProfileTeamScreen(date: board[index1],fromOther: true,)));
+                                    navigateTo(context: context, widget: ProfileTeamScreen(date: board[index1],fromOther: true,));
                                   },
                                   child: Container(
                                     width: 140.w,

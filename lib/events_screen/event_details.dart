@@ -50,7 +50,7 @@ class _EventDetailState extends State<EventDetail> {
     _scrollController.removeListener(_scrollListener);
     super.dispose();
   }
-
+  bool isShown = true;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LayOutCubit, LayOutStates>(
@@ -69,150 +69,152 @@ class _EventDetailState extends State<EventDetail> {
           backgroundColor: Colors.white,
           body: Stack(
             children: [
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-300.w, 120.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            HexColor('002e8d'),
-                            HexColor('063caa'),
-                          ],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(1.0, 0.0),
-                          stops: const [0.0, 1.0],
-                          tileMode: TileMode.clamp),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+              if(isShown)...[
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-300.w, 120.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              HexColor('002e8d'),
+                              HexColor('063caa'),
+                            ],
+                            begin: const FractionalOffset(0.0, 0.0),
+                            end: const FractionalOffset(1.0, 0.0),
+                            stops: const [0.0, 1.0],
+                            tileMode: TileMode.clamp),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-290.w, 130.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-290.w, 130.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-289.w, 131.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            HexColor('002e8d'),
-                            HexColor('063caa'),
-                          ],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(1.0, 0.0),
-                          stops: const [0.0, 1.0],
-                          tileMode: TileMode.clamp),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-289.w, 131.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              HexColor('002e8d'),
+                              HexColor('063caa'),
+                            ],
+                            begin: const FractionalOffset(0.0, 0.0),
+                            end: const FractionalOffset(1.0, 0.0),
+                            stops: const [0.0, 1.0],
+                            tileMode: TileMode.clamp),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-280.w, 140.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-280.w, 140.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-279.w, 141.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            HexColor('002e8d'),
-                            HexColor('063caa'),
-                          ],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(1.0, 0.0),
-                          stops: const [0.0, 1.0],
-                          tileMode: TileMode.clamp),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-279.w, 141.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              HexColor('002e8d'),
+                              HexColor('063caa'),
+                            ],
+                            begin: const FractionalOffset(0.0, 0.0),
+                            end: const FractionalOffset(1.0, 0.0),
+                            stops: const [0.0, 1.0],
+                            tileMode: TileMode.clamp),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-270.w, 150.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-270.w, 150.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Transform.rotate(
-                angle: pi / 6,
-                child: Transform.translate(
-                  offset: Offset(-269.w, 151.h),
-                  child: Container(
-                    height: 900.h,
-                    width: 900.w,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          colors: [
-                            HexColor('002e8d'),
-                            HexColor('063caa'),
-                          ],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(1.0, 0.0),
-                          stops: const [0.0, 1.0],
-                          tileMode: TileMode.clamp),
-                      shape: BoxShape.rectangle,
-                      borderRadius: BorderRadius.circular(150),
+                Transform.rotate(
+                  angle: pi / 6,
+                  child: Transform.translate(
+                    offset: Offset(-269.w, 151.h),
+                    child: Container(
+                      height: 900.h,
+                      width: 900.w,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            colors: [
+                              HexColor('002e8d'),
+                              HexColor('063caa'),
+                            ],
+                            begin: const FractionalOffset(0.0, 0.0),
+                            end: const FractionalOffset(1.0, 0.0),
+                            stops: const [0.0, 1.0],
+                            tileMode: TileMode.clamp),
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(150),
+                      ),
                     ),
                   ),
                 ),
-              ),
+              ],
               CustomScrollView(
                 controller: _scrollController,
                 physics: const BouncingScrollPhysics(),
@@ -224,6 +226,9 @@ class _EventDetailState extends State<EventDetail> {
                     floating: false,
                     leading: IconButton(
                       onPressed: () {
+                        setState(() {
+                          isShown = false;
+                        });
                         Navigator.pop(context);
                       },
                       icon: Icon(
@@ -605,13 +610,9 @@ class _EventDetailState extends State<EventDetail> {
                                       itemBuilder: (context, index) {
                                         return InkWell(
                                           onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MyCustomRoute(
-                                                    builder: (context) =>
-                                                        EventDetail(
-                                                          data: data[index],
-                                                        )));
+                                          navigateTo(context: context, widget: EventDetail(
+                                            data: data[index],
+                                          ));
                                           },
                                           child: Card(
                                               elevation: 5,

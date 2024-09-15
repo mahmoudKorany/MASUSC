@@ -1,4 +1,3 @@
-
 import 'dart:math' show pi;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +9,16 @@ import 'package:masusc/price_screen/show_prize_image.dart';
 import 'package:masusc/shared/shared_component/component.dart';
 import 'package:shimmer/shimmer.dart';
 
-class AppTeam extends StatelessWidget {
+class AppTeam extends StatefulWidget {
+
   const AppTeam({super.key});
+
+  @override
+  State<AppTeam> createState() => _AppTeamState();
+}
+
+class _AppTeamState extends State<AppTeam> {
+   bool isShown = true;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +28,9 @@ class AppTeam extends StatelessWidget {
         elevation: 0.0,
         leading: IconButton(
           onPressed: () {
+            setState(() {
+            isShown = false;
+            });
             Navigator.pop(context);
             Navigator.pop(context);
           },
@@ -42,157 +52,159 @@ class AppTeam extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-300.w, 120.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        HexColor('002e8d'),
-                        HexColor('063caa'),
-                      ],
-                      begin: const FractionalOffset(0.0, 0.0),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops: const [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+          if(isShown)...[
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-300.w, 120.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                          HexColor('002e8d'),
+                          HexColor('063caa'),
+                        ],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: const [0.0, 1.0],
+                        tileMode: TileMode.clamp),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-290.w, 130.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-290.w, 130.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-289.w, 131.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        HexColor('002e8d'),
-                        HexColor('063caa'),
-                      ],
-                      begin: const FractionalOffset(0.0, 0.0),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops: const [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-289.w, 131.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                          HexColor('002e8d'),
+                          HexColor('063caa'),
+                        ],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: const [0.0, 1.0],
+                        tileMode: TileMode.clamp),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-280.w, 140.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-280.w, 140.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-279.w, 141.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        HexColor('002e8d'),
-                        HexColor('063caa'),
-                      ],
-                      begin: const FractionalOffset(0.0, 0.0),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops: const [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-279.w, 141.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                          HexColor('002e8d'),
+                          HexColor('063caa'),
+                        ],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: const [0.0, 1.0],
+                        tileMode: TileMode.clamp),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-270.w, 150.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-270.w, 150.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
-          Transform.rotate(
-            angle: pi / 6,
-            child: Transform.translate(
-              offset: Offset(-269.w, 151.h),
-              child: Container(
-                height: 900.h,
-                width: 900.w,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [
-                        HexColor('002e8d'),
-                        HexColor('063caa'),
-                      ],
-                      begin: const FractionalOffset(0.0, 0.0),
-                      end: const FractionalOffset(1.0, 0.0),
-                      stops: const [0.0, 1.0],
-                      tileMode: TileMode.clamp),
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(150),
+            Transform.rotate(
+              angle: pi / 6,
+              child: Transform.translate(
+                offset: Offset(-269.w, 151.h),
+                child: Container(
+                  height: 900.h,
+                  width: 900.w,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [
+                          HexColor('002e8d'),
+                          HexColor('063caa'),
+                        ],
+                        begin: const FractionalOffset(0.0, 0.0),
+                        end: const FractionalOffset(1.0, 0.0),
+                        stops: const [0.0, 1.0],
+                        tileMode: TileMode.clamp),
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(150),
+                  ),
                 ),
               ),
             ),
-          ),
+          ],
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children:[
+                children: [
                   Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
@@ -231,14 +243,11 @@ class AppTeam extends StatelessWidget {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                          context,
-                                          MyCustomRoute(
-                                            builder: (context) =>
-                                                const ShowPrizeScreen(
-                                              image:
-                                                  'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-39-28.jpg?alt=media&token=b71483d5-f619-4765-b2a0-a5bdd340699d',
-                                            ),
+                                        navigateTo(
+                                          context: context,
+                                          widget: const ShowPrizeScreen(
+                                            image:
+                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-39-28.jpg?alt=media&token=b71483d5-f619-4765-b2a0-a5bdd340699d',
                                           ),
                                         );
                                       },
@@ -341,7 +350,7 @@ class AppTeam extends StatelessWidget {
                                         SizedBox(
                                           width: 5.w,
                                         ),
-                                        Text(
+                                        SelectableText(
                                           '01146319465',
                                           maxLines: 1,
                                           style: TextStyle(
@@ -401,13 +410,12 @@ class AppTeam extends StatelessWidget {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MyCustomRoute(
-                                                builder: (context) =>
-                                                    const ShowPrizeScreen(
-                                                        image:
-                                                            'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-48.jpg?alt=media&token=4d4a16d1-4ec7-4d01-bcdd-85d882058c73')));
+                                        navigateTo(
+                                          context: context,
+                                          widget: const ShowPrizeScreen(
+                                              image:
+                                                  'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-48.jpg?alt=media&token=4d4a16d1-4ec7-4d01-bcdd-85d882058c73'),
+                                        );
                                       },
                                       child: Container(
                                         clipBehavior: Clip.antiAlias,
@@ -508,7 +516,7 @@ class AppTeam extends StatelessWidget {
                                         SizedBox(
                                           width: 5.w,
                                         ),
-                                        Text(
+                                        SelectableText(
                                           '01090677934',
                                           maxLines: 1,
                                           style: TextStyle(
@@ -556,12 +564,12 @@ class AppTeam extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             physics: const BouncingScrollPhysics(),
                             child: Row(
-                              children:
-                              [
+                              children: [
                                 Card(
                                     elevation: 5,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0.r),
+                                      borderRadius:
+                                          BorderRadius.circular(18.0.r),
                                     ),
                                     clipBehavior: Clip.antiAlias,
                                     borderOnForeground: true,
@@ -570,47 +578,50 @@ class AppTeam extends StatelessWidget {
                                           horizontal: 8.0.w, vertical: 8.h),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                      const ShowPrizeScreen(
-                                                          image:
-                                                          'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-37-30.jpg?alt=media&token=8277fd53-a680-4fcd-8ea3-df76142255d6')));
+                                              navigateTo(
+                                                context: context,
+                                                widget: const ShowPrizeScreen(
+                                                    image:
+                                                        'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-37-30.jpg?alt=media&token=8277fd53-a680-4fcd-8ea3-df76142255d6'),
+                                              );
                                             },
                                             child: Container(
                                               clipBehavior: Clip.antiAlias,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(10.r),
+                                                    BorderRadius.circular(10.r),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-37-30.jpg?alt=media&token=8277fd53-a680-4fcd-8ea3-df76142255d6',
-                                                placeholder: (context, string) =>
-                                                    Shimmer.fromColors(
-                                                      baseColor: Colors.grey,
-                                                      highlightColor: Colors.grey[700]!,
-                                                      child: Container(
-                                                        width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
+                                                    'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-37-30.jpg?alt=media&token=8277fd53-a680-4fcd-8ea3-df76142255d6',
+                                                placeholder:
+                                                    (context, string) =>
+                                                        Shimmer.fromColors(
+                                                  baseColor: Colors.grey,
+                                                  highlightColor:
+                                                      Colors.grey[700]!,
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
                                                             1.5,
-                                                        decoration: BoxDecoration(
-                                                          color: Colors.grey,
-                                                          borderRadius:
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.grey,
+                                                      borderRadius:
                                                           BorderRadius.circular(
                                                               10.0.r),
-                                                        ),
-                                                      ),
                                                     ),
+                                                  ),
+                                                ),
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.5,
                                                 height: 270.h,
                                                 fit: BoxFit.cover,
@@ -637,7 +648,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Iconsax.information,
@@ -649,8 +660,8 @@ class AppTeam extends StatelessWidget {
                                               ),
                                               SizedBox(
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.65,
                                                 child: Text(
                                                   'Backend php laravel developer with 7 years freelancing experience',
@@ -658,7 +669,8 @@ class AppTeam extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: HexColor('0438a1'),
                                                     fontSize: 13.sp,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
@@ -671,7 +683,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 IconBroken.Call,
@@ -681,14 +693,15 @@ class AppTeam extends StatelessWidget {
                                               SizedBox(
                                                 width: 5.w,
                                               ),
-                                              Text(
+                                              SelectableText(
                                                 '01001659186',
                                                 maxLines: 1,
                                                 style: TextStyle(
                                                   color: Colors.grey[800],
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 16.sp,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ),
                                             ],
@@ -702,7 +715,8 @@ class AppTeam extends StatelessWidget {
                                 Card(
                                     elevation: 5,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0.r),
+                                      borderRadius:
+                                          BorderRadius.circular(18.0.r),
                                     ),
                                     clipBehavior: Clip.antiAlias,
                                     borderOnForeground: true,
@@ -711,47 +725,50 @@ class AppTeam extends StatelessWidget {
                                           horizontal: 8.0.w, vertical: 8.h),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                      const ShowPrizeScreen(
-                                                          image:
-                                                          'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-33.jpg?alt=media&token=33238cd6-bb83-4044-8655-39e49d61622f')));
+                                              navigateTo(
+                                                context: context,
+                                                widget: const ShowPrizeScreen(
+                                                    image:
+                                                        'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-33.jpg?alt=media&token=33238cd6-bb83-4044-8655-39e49d61622f'),
+                                              );
                                             },
                                             child: Container(
                                               clipBehavior: Clip.antiAlias,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(10.r),
+                                                    BorderRadius.circular(10.r),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-33.jpg?alt=media&token=33238cd6-bb83-4044-8655-39e49d61622f',
-                                                placeholder: (context, string) =>
-                                                    Shimmer.fromColors(
-                                                      baseColor: Colors.grey,
-                                                      highlightColor: Colors.grey[700]!,
-                                                      child: Container(
-                                                        width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
+                                                    'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-38-33.jpg?alt=media&token=33238cd6-bb83-4044-8655-39e49d61622f',
+                                                placeholder:
+                                                    (context, string) =>
+                                                        Shimmer.fromColors(
+                                                  baseColor: Colors.grey,
+                                                  highlightColor:
+                                                      Colors.grey[700]!,
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
                                                             1.5,
-                                                        decoration: BoxDecoration(
-                                                          color: Colors.grey,
-                                                          borderRadius:
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.grey,
+                                                      borderRadius:
                                                           BorderRadius.circular(
                                                               10.0.r),
-                                                        ),
-                                                      ),
                                                     ),
+                                                  ),
+                                                ),
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.5,
                                                 height: 270.h,
                                                 fit: BoxFit.cover,
@@ -778,7 +795,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Iconsax.information,
@@ -790,8 +807,8 @@ class AppTeam extends StatelessWidget {
                                               ),
                                               SizedBox(
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.65,
                                                 child: Text(
                                                   'Backend Developer',
@@ -799,7 +816,8 @@ class AppTeam extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: HexColor('0438a1'),
                                                     fontSize: 13.sp,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
@@ -812,7 +830,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 IconBroken.Call,
@@ -822,14 +840,15 @@ class AppTeam extends StatelessWidget {
                                               SizedBox(
                                                 width: 5.w,
                                               ),
-                                              Text(
+                                              SelectableText(
                                                 '01222988691',
                                                 maxLines: 1,
                                                 style: TextStyle(
                                                   color: Colors.grey[800],
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 16.sp,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ),
                                             ],
@@ -843,7 +862,8 @@ class AppTeam extends StatelessWidget {
                                 Card(
                                     elevation: 5,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0.r),
+                                      borderRadius:
+                                          BorderRadius.circular(18.0.r),
                                     ),
                                     clipBehavior: Clip.antiAlias,
                                     borderOnForeground: true,
@@ -852,47 +872,50 @@ class AppTeam extends StatelessWidget {
                                           horizontal: 8.0.w, vertical: 8.h),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                      const ShowPrizeScreen(
-                                                          image:
-                                                          'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A4%D9%A0%D9%A2%D9%A2%D9%A4-%D9%A1%D9%A8%D9%A4%D9%A6%D9%A4%D9%A7.jpg?alt=media&token=d2ccfff3-6234-4620-b511-6fb30341a4c2')));
+                                              navigateTo(
+                                                context: context,
+                                                widget: const ShowPrizeScreen(
+                                                    image:
+                                                        'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A4%D9%A0%D9%A2%D9%A2%D9%A4-%D9%A1%D9%A8%D9%A4%D9%A6%D9%A4%D9%A7.jpg?alt=media&token=d2ccfff3-6234-4620-b511-6fb30341a4c2'),
+                                              );
                                             },
                                             child: Container(
                                               clipBehavior: Clip.antiAlias,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(10.r),
+                                                    BorderRadius.circular(10.r),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A4%D9%A0%D9%A2%D9%A2%D9%A4-%D9%A1%D9%A8%D9%A4%D9%A6%D9%A4%D9%A7.jpg?alt=media&token=d2ccfff3-6234-4620-b511-6fb30341a4c2',
-                                                placeholder: (context, string) =>
-                                                    Shimmer.fromColors(
-                                                      baseColor: Colors.grey,
-                                                      highlightColor: Colors.grey[700]!,
-                                                      child: Container(
-                                                        width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
+                                                    'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/Screenshot_%D9%A2%D9%A0%D9%A2%D9%A4%D9%A0%D9%A2%D9%A2%D9%A4-%D9%A1%D9%A8%D9%A4%D9%A6%D9%A4%D9%A7.jpg?alt=media&token=d2ccfff3-6234-4620-b511-6fb30341a4c2',
+                                                placeholder:
+                                                    (context, string) =>
+                                                        Shimmer.fromColors(
+                                                  baseColor: Colors.grey,
+                                                  highlightColor:
+                                                      Colors.grey[700]!,
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
                                                             1.5,
-                                                        decoration: BoxDecoration(
-                                                          color: Colors.grey,
-                                                          borderRadius:
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.grey,
+                                                      borderRadius:
                                                           BorderRadius.circular(
                                                               10.0.r),
-                                                        ),
-                                                      ),
                                                     ),
+                                                  ),
+                                                ),
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.5,
                                                 height: 270.h,
                                                 fit: BoxFit.cover,
@@ -919,7 +942,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Iconsax.information,
@@ -931,8 +954,8 @@ class AppTeam extends StatelessWidget {
                                               ),
                                               SizedBox(
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.65,
                                                 child: Text(
                                                   'Web Developer and UX/UI Designer',
@@ -940,7 +963,8 @@ class AppTeam extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: HexColor('0438a1'),
                                                     fontSize: 13.sp,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
@@ -953,7 +977,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 IconBroken.Call,
@@ -963,14 +987,15 @@ class AppTeam extends StatelessWidget {
                                               SizedBox(
                                                 width: 5.w,
                                               ),
-                                              Text(
+                                              SelectableText(
                                                 '01033677906',
                                                 maxLines: 1,
                                                 style: TextStyle(
                                                   color: Colors.grey[800],
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 16.sp,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ),
                                             ],
@@ -1014,12 +1039,12 @@ class AppTeam extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             physics: const BouncingScrollPhysics(),
                             child: Row(
-                              children:
-                              [
+                              children: [
                                 Card(
                                     elevation: 5,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0.r),
+                                      borderRadius:
+                                          BorderRadius.circular(18.0.r),
                                     ),
                                     clipBehavior: Clip.antiAlias,
                                     borderOnForeground: true,
@@ -1028,47 +1053,50 @@ class AppTeam extends StatelessWidget {
                                           horizontal: 8.0.w, vertical: 8.h),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                      const ShowPrizeScreen(
-                                                          image:
-                                                          'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-35-27.jpg?alt=media&token=71a08fe4-0e23-43b6-bd0d-f69bd4fa294b')));
+                                              navigateTo(
+                                                context: context,
+                                                widget: const ShowPrizeScreen(
+                                                    image:
+                                                        'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-35-27.jpg?alt=media&token=71a08fe4-0e23-43b6-bd0d-f69bd4fa294b'),
+                                              );
                                             },
                                             child: Container(
                                               clipBehavior: Clip.antiAlias,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(10.r),
+                                                    BorderRadius.circular(10.r),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-35-27.jpg?alt=media&token=71a08fe4-0e23-43b6-bd0d-f69bd4fa294b',
-                                                placeholder: (context, string) =>
-                                                    Shimmer.fromColors(
-                                                      baseColor: Colors.grey,
-                                                      highlightColor: Colors.grey[700]!,
-                                                      child: Container(
-                                                        width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
+                                                    'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/photo_2024-02-25_11-35-27.jpg?alt=media&token=71a08fe4-0e23-43b6-bd0d-f69bd4fa294b',
+                                                placeholder:
+                                                    (context, string) =>
+                                                        Shimmer.fromColors(
+                                                  baseColor: Colors.grey,
+                                                  highlightColor:
+                                                      Colors.grey[700]!,
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
                                                             1.5,
-                                                        decoration: BoxDecoration(
-                                                          color: Colors.grey,
-                                                          borderRadius:
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.grey,
+                                                      borderRadius:
                                                           BorderRadius.circular(
                                                               10.0.r),
-                                                        ),
-                                                      ),
                                                     ),
+                                                  ),
+                                                ),
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.5,
                                                 height: 270.h,
                                                 fit: BoxFit.cover,
@@ -1095,7 +1123,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Iconsax.information,
@@ -1107,8 +1135,8 @@ class AppTeam extends StatelessWidget {
                                               ),
                                               SizedBox(
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.65,
                                                 child: Text(
                                                   'Data reviewer',
@@ -1116,7 +1144,8 @@ class AppTeam extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: HexColor('0438a1'),
                                                     fontSize: 13.sp,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
@@ -1129,7 +1158,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 IconBroken.Call,
@@ -1139,14 +1168,15 @@ class AppTeam extends StatelessWidget {
                                               SizedBox(
                                                 width: 5.w,
                                               ),
-                                              Text(
+                                              SelectableText(
                                                 '01096915567',
                                                 maxLines: 1,
                                                 style: TextStyle(
                                                   color: Colors.grey[800],
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 16.sp,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ),
                                             ],
@@ -1160,7 +1190,8 @@ class AppTeam extends StatelessWidget {
                                 Card(
                                     elevation: 5,
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0.r),
+                                      borderRadius:
+                                          BorderRadius.circular(18.0.r),
                                     ),
                                     clipBehavior: Clip.antiAlias,
                                     borderOnForeground: true,
@@ -1169,47 +1200,48 @@ class AppTeam extends StatelessWidget {
                                           horizontal: 8.0.w, vertical: 8.h),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           InkWell(
                                             onTap: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                      const ShowPrizeScreen(
-                                                          image:
-                                                          'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/IMG_20231215_144318_859.jpg?alt=media&token=21c5b1c2-6b7e-4028-969a-074b9df83457')));
+                                            navigateTo(context: context, widget:       const ShowPrizeScreen(
+                                                image:
+                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/IMG_20231215_144318_859.jpg?alt=media&token=21c5b1c2-6b7e-4028-969a-074b9df83457'),
+                                            );
                                             },
                                             child: Container(
                                               clipBehavior: Clip.antiAlias,
                                               decoration: BoxDecoration(
                                                 borderRadius:
-                                                BorderRadius.circular(10.r),
+                                                    BorderRadius.circular(10.r),
                                               ),
                                               child: CachedNetworkImage(
                                                 imageUrl:
-                                                'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/IMG_20231215_144318_859.jpg?alt=media&token=21c5b1c2-6b7e-4028-969a-074b9df83457',
-                                                placeholder: (context, string) =>
-                                                    Shimmer.fromColors(
-                                                      baseColor: Colors.grey,
-                                                      highlightColor: Colors.grey[700]!,
-                                                      child: Container(
-                                                        width: MediaQuery.of(context)
-                                                            .size
-                                                            .width /
+                                                    'https://firebasestorage.googleapis.com/v0/b/masusc-bd020.appspot.com/o/IMG_20231215_144318_859.jpg?alt=media&token=21c5b1c2-6b7e-4028-969a-074b9df83457',
+                                                placeholder:
+                                                    (context, string) =>
+                                                        Shimmer.fromColors(
+                                                  baseColor: Colors.grey,
+                                                  highlightColor:
+                                                      Colors.grey[700]!,
+                                                  child: Container(
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                                .size
+                                                                .width /
                                                             1.5,
-                                                        decoration: BoxDecoration(
-                                                          color: Colors.grey,
-                                                          borderRadius:
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.grey,
+                                                      borderRadius:
                                                           BorderRadius.circular(
                                                               10.0.r),
-                                                        ),
-                                                      ),
                                                     ),
+                                                  ),
+                                                ),
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.5,
                                                 height: 270.h,
                                                 fit: BoxFit.cover,
@@ -1236,7 +1268,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Iconsax.information,
@@ -1248,8 +1280,8 @@ class AppTeam extends StatelessWidget {
                                               ),
                                               SizedBox(
                                                 width: MediaQuery.of(context)
-                                                    .size
-                                                    .width /
+                                                        .size
+                                                        .width /
                                                     1.65,
                                                 child: Text(
                                                   'Data reviewer',
@@ -1257,7 +1289,8 @@ class AppTeam extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: HexColor('0438a1'),
                                                     fontSize: 13.sp,
-                                                    overflow: TextOverflow.ellipsis,
+                                                    overflow:
+                                                        TextOverflow.ellipsis,
                                                     fontFamily: 'Montserrat',
                                                   ),
                                                 ),
@@ -1270,7 +1303,7 @@ class AppTeam extends StatelessWidget {
                                           Row(
                                             mainAxisSize: MainAxisSize.min,
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 IconBroken.Call,
@@ -1280,14 +1313,15 @@ class AppTeam extends StatelessWidget {
                                               SizedBox(
                                                 width: 5.w,
                                               ),
-                                              Text(
+                                              SelectableText(
                                                 '01024192178',
                                                 maxLines: 1,
                                                 style: TextStyle(
                                                   color: Colors.grey[800],
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 16.sp,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                 ),
                                               ),
                                             ],

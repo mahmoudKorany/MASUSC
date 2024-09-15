@@ -131,13 +131,7 @@ class _SessionsScreenState extends State<SessionsScreen> {
                                 .then((value) {
                               if (value) {
                                 Navigator.pop(context);
-                                Navigator.push(
-                                  context,
-                                  MyCustomRoute(
-                                    builder: (context) =>
-                                        const AddSessionsScreen(),
-                                  ),
-                                );
+                              navigateTo(context: context, widget:     const AddSessionsScreen(),);
                               } else {
                                 Navigator.pop(context);
                                 showToast(
@@ -268,13 +262,7 @@ class _SessionsScreenState extends State<SessionsScreen> {
                                   .then((value) {
                                 if (value) {
                                   Navigator.pop(context);
-                                  Navigator.push(
-                                    context,
-                                    MyCustomRoute(
-                                      builder: (context) =>
-                                          const EditSessionsScreen(),
-                                    ),
-                                  );
+                                navigateTo(context: context, widget:   const EditSessionsScreen(),);
                                 } else {
                                   Navigator.pop(context);
                                   showToast(

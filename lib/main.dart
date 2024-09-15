@@ -21,13 +21,13 @@ import 'on_boarding_screen/on_boarding_screen.dart';
 
 Widget? startScreen;
 
-void checkPermission() async {
-  await Permission.notification.isDenied.then((value) {
-    if (value) {
-      Permission.notification.request();
-    }
-  });
-}
+// void checkPermission() async {
+//   await Permission.notification.isDenied.then((value) {
+//     if (value) {
+//       Permission.notification.request();
+//     }
+//   });
+// }
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   NotificationService().showNotification(
@@ -58,7 +58,7 @@ Future<void> main() async {
   await DioHelper.init();
   bool? isOnBoardingDone = await CacheHelper.getData(key: 'onBoarding');
   uid = await CacheHelper.getData(key: 'userUid');
-  checkPermission();
+  //checkPermission();
   if (isOnBoardingDone == null && uid == null) {
     startScreen = const StartScreen();
   } else if (isOnBoardingDone == true && uid == null) {

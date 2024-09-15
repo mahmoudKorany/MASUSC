@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -5,7 +8,11 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:loading_indicator/loading_indicator.dart';
 
 void navigateAndFinish(context, widget) {
-  Navigator.of(context).pushReplacement(SlideRight(page: widget));
+  if(Platform.isIOS){
+    Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (context) => widget));
+  }else{
+    Navigator.of(context).pushReplacement(SlideRight(page: widget));
+  }
 }
 
 Widget button(
@@ -95,7 +102,11 @@ void navigateTo ({
   required Widget widget
 })
 {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
+  if(Platform.isIOS){
+    Navigator.of(context).push(CupertinoPageRoute(builder: (context) => widget));
+  }else{
+    Navigator.push(context, MyCustomRoute(builder: (context) => widget));
+  }
 }
 
 void showToast({

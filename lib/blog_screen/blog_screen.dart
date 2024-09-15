@@ -343,7 +343,7 @@ class _BlogScreenState extends State<BlogScreen> {
                     return InkWell(
                       onTap: ()
                       {
-                        Navigator.push(context, MyCustomRoute(builder: (context) => BlogDetail(data: LayOutCubit.get(context).blogItem!.data![index],)));
+                        navigateTo(context: context, widget: BlogDetail(data: LayOutCubit.get(context).blogItem!.data![index],));
                       },
                       child: Card(
                           elevation: 5,

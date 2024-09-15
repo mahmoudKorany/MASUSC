@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CLIENT_ID</key>
+	<string>723697751771-r8fea6cnf1f2ngm3dqug69andcgnc9od.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.723697751771-r8fea6cnf1f2ngm3dqug69andcgnc9od</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>723697751771-jikt95sb9v42aa8bc7tec2v2g44cndmd.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAKadDaeqPiP9CdJSMNVxAOPcRDjdagjvI</string>
 	<key>GCM_SENDER_ID</key>
@@ -9,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.masusc</string>
+	<string>com.masusc.masusc</string>
 	<key>PROJECT_ID</key>
 	<string>masusc-bd020</string>
 	<key>STORAGE_BUCKET</key>
@@ -25,6 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:723697751771:ios:982ab45c909a4107ae5efe</string>
+	<string>1:723697751771:ios:e608147506b57f01ae5efe</string>
+	<key>DATABASE_URL</key>
+	<string>https://masusc-bd020-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

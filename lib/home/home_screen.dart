@@ -113,12 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MyCustomRoute(
-                        builder: (context) => const SessionsScreen(),
-                      ),
-                    );
+                  navigateTo(context: context, widget: const SessionsScreen());
                   },
                   child: Container(
                     clipBehavior: Clip.antiAlias,
@@ -148,12 +143,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MyCustomRoute(
-                        builder: (context) => const SettingScreen(),
-                      ),
-                    );
+                   navigateTo(context: context, widget: const SettingScreen(),);
                   },
                   child: Container(
                     clipBehavior: Clip.antiAlias,
@@ -183,12 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MyCustomRoute(
-                        builder: (context) => const AppTeam(),
-                      ),
-                    );
+                   navigateTo(context: context, widget: const AppTeam(),);
                   },
                   child: Container(
                     clipBehavior: Clip.antiAlias,
@@ -274,12 +259,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Widget commitItem({required CommitItem commitItem}) {
       return InkWell(
         onTap: () {
-          Navigator.push(
-              context,
-              MyCustomRoute(
-                  builder: (context) => CommitteeDetail(
-                        commitItem: commitItem,
-                      )));
+      navigateTo(context: context, widget: CommitteeDetail(
+        commitItem: commitItem,
+      ),);
         },
         child: Stack(
           alignment: Alignment.center,
@@ -729,15 +711,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Expanded(
                                     child: InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MyCustomRoute(
-                                                builder: (context) =>
-                                                    PriceScreen(
-                                                      title:
-                                                          'Chapter of excellence',
-                                                      prices: (cubit.chapter)!,
-                                                    )));
+                                        navigateTo(context: context, widget:  PriceScreen(
+                                          title:
+                                          'Chapter of excellence',
+                                          prices: (cubit.chapter)!,
+                                        ),);
                                       },
                                       child: Container(
                                         height: 110.h,
@@ -778,15 +756,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                   Expanded(
                                     child: InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MyCustomRoute(
-                                                builder: (context) =>
-                                                    PriceScreen(
-                                                      title:
-                                                          'Outstanding chapter',
-                                                      prices: (cubit.out)!,
-                                                    )));
+                                        navigateTo(context: context, widget:   PriceScreen(
+                                          title:
+                                          'Outstanding chapter',
+                                          prices: (cubit.out)!,
+                                        ),);
                                       },
                                       child: Container(
                                         height: 110.h,
@@ -867,11 +841,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           ElevatedButton(
                                             onPressed: () {
-                                              Navigator.push(
-                                                  context,
-                                                  MyCustomRoute(
-                                                      builder: (context) =>
-                                                          const ChooseTermScreen()));
+                                             navigateTo(context: context, widget: const ChooseTermScreen(),);
                                             },
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor:
@@ -954,14 +924,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   itemBuilder: (context, index) {
                                     return InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            MyCustomRoute(
-                                                builder: (context) =>
-                                                    BlogDetail(
-                                                      data: cubit.blogItem!
-                                                          .data![index],
-                                                    )));
+                                        navigateTo(context: context, widget:  BlogDetail(
+                                          data: cubit.blogItem!
+                                              .data![index],
+                                        ),);
                                       },
                                       child: Card(
                                           elevation: 5,
@@ -1132,14 +1098,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 itemBuilder: (context, index) {
                                   return InkWell(
                                     onTap: () {
-                                      Navigator.push(
-                                          context,
-                                          MyCustomRoute(
-                                              builder: (context) => EventDetail(
-                                                    data: cubit.eventItem!
-                                                        .data![index],
-                                                  )));
-                                    },
+                                  navigateTo(context: context, widget:  EventDetail(
+                                    data: cubit.eventItem!
+                                        .data![index],
+                                  ),);},
                                     child: Card(
                                       elevation: 5,
                                       shape: RoundedRectangleBorder(
