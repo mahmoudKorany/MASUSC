@@ -66,3 +66,13 @@ class UpdateProfileError extends LoginStates {
 
   UpdateProfileError(this.error);
 }
+
+class DeleteAccountLoading extends LoginStates {}
+
+class DeleteAccountSuccess extends LoginStates {}
+
+class DeleteAccountError extends LoginStates {
+  final String error;
+
+  DeleteAccountError(this.error);
+}

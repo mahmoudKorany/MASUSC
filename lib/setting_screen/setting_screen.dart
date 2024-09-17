@@ -552,53 +552,91 @@ class _SettingScreenState extends State<SettingScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 50.h,
-                    ),
-                    ConditionalBuilder(
-                      condition: state is! LogoutLoading,
-                      fallback: (context) => loading(),
-                      builder: (context) => InkWell(
-                        onTap: () {
-                          LoginCubit.get(context).logout(context);
-                        },
-                        child: Center(
-                          child: Container(
-                            clipBehavior: Clip.antiAlias,
-                            height: 50.h,
-                            width: MediaQuery.of(context).size.width / 1.1,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.r),
-                              color: HexColor('ca0000'),
-                            ),
-                            child: Center(
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    'Logout',
-                                    style: TextStyle(
-                                      fontSize: 18.sp,
-                                      fontFamily: 'Montserrat',
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 10.w,
-                                  ),
-                                  const Icon(
-                                    IconBroken.Logout,
+                    Padding(
+                      padding: EdgeInsets.all(20.0.r),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 2,
+                            child: ConditionalBuilder(
+                              condition: State is! DeleteAccountLoading,
+                              fallback: (context) => loading(),
+                              builder: (context) => Container(
+                                height: 50.h,
+                                decoration: BoxDecoration(
+                                  color: HexColor('ca0000'),
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                child: ListTile(
+                                  splashColor: HexColor('ca0000'),
+                                  leading: const Icon(
+                                    IconBroken.Delete,
                                     color: Colors.white,
                                   ),
-                                ],
+                                  title: Text(
+                                    'Delete Account',
+                                    style: TextStyle(
+                                      fontFamily: 'jannah1',
+                                      color: Colors.white,
+                                      fontSize: 15.sp,
+                                    ),
+                                  ),
+                                  onTap: () {
+                                    LoginCubit.get(context).accountDelete(context);
+                                  },
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Expanded(
+                            child: ConditionalBuilder(
+                              condition: state is! LogoutLoading,
+                              fallback: (context) => loading(),
+                              builder: (context) => InkWell(
+                                onTap: () {
+                                  LoginCubit.get(context).logout(context);
+                                },
+                                child: Center(
+                                  child: Container(
+                                    clipBehavior: Clip.antiAlias,
+                                    height: 50.h,
+                                    width: MediaQuery.of(context).size.width / 1.1,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10.r),
+                                      color: HexColor('ca0000'),
+                                    ),
+                                    child: Center(
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Text(
+                                            'Logout',
+                                            style: TextStyle(
+                                              fontSize: 15.sp,
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: 10.w,
+                                          ),
+                                          const Icon(
+                                            IconBroken.Logout,
+                                            color: Colors.white,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 30.h,
                     ),
                     Center(
                       child: Container(

@@ -18,6 +18,8 @@ class LoginCubit extends Cubit<LoginStates> {
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
+  var firebaseInstance = FirebaseFirestore.instance;
+  var firebaseInstanceAuth = FirebaseAuth.instance;
   bool isObscure = true;
   IconData suffixIcon = Iconsax.eye;
   String? userImageUrl;
@@ -34,7 +36,7 @@ class LoginCubit extends Cubit<LoginStates> {
 
   CurrentUser? currentUser;
   Future<void> getUserData({required String? uid}) async {
-    await FirebaseFirestore.instance
+    await firebaseInstance
         .collection('users')
         .doc(uid)
         .get()
@@ -48,7 +50,7 @@ class LoginCubit extends Cubit<LoginStates> {
 
   Future<void> changePassword(String newPassword,context)async {
     emit(ChangePasswordLoading());
-    await FirebaseAuth.instance.currentUser!.updatePassword(newPassword).then((value)
+    await firebaseInstanceAuth.currentUser!.updatePassword(newPassword).then((value)
     {
       Navigator.pop(context);
       showToast(msg: 'Password Changed Successfully', state: MsgState.success);
@@ -73,7 +75,7 @@ class LoginCubit extends Cubit<LoginStates> {
       required String name,
       required BuildContext context})async {
     emit(RegisterLoading());
-    await FirebaseAuth.instance
+    await firebaseInstanceAuth
         .createUserWithEmailAndPassword(email: email, password: password)
         .then((value) async {
       await userCreate(
@@ -101,7 +103,7 @@ class LoginCubit extends Cubit<LoginStates> {
         message = 'Check your internet connection';
       }else
       {
-        message = error.toString();
+        message = 'Something went wrong';
       }
       showToast(msg: message, state: MsgState.error);
       emit(RegisterError(error.toString()));
@@ -116,7 +118,7 @@ class LoginCubit extends Cubit<LoginStates> {
   })async {
     UserModel userModel = UserModel(
         phone: phone, email: email, name: name, uid: uid);
-   await FirebaseFirestore.instance
+   await firebaseInstance
         .collection('users')
         .doc(uid)
         .set(userModel.toMap())
@@ -132,7 +134,7 @@ class LoginCubit extends Cubit<LoginStates> {
       required String password,
       required BuildContext context}) {
     emit(LoginLoading());
-    FirebaseAuth.instance
+    firebaseInstanceAuth
         .signInWithEmailAndPassword(email: email, password: password)
         .then((value) async {
       await getUserData(uid: value.user!.uid);
@@ -154,7 +156,7 @@ class LoginCubit extends Cubit<LoginStates> {
         message = 'Check your internet connection';
       }else
       {
-        message = error.toString();
+        message = 'Your email or password not correct';
       }
       showToast(msg: message, state: MsgState.error);
       emit(LoginError(error.toString()));
@@ -163,6 +165,7 @@ class LoginCubit extends Cubit<LoginStates> {
 
   void logout(context) async {
     emit(LogoutLoading());
+    await firebaseInstanceAuth.signOut();
     await CacheHelper.removeData(key: 'userUid').then((value) async {
       await CacheHelper.removeData(key: 'noOfRemoved');
       uid = '';
@@ -171,5 +174,22 @@ class LoginCubit extends Cubit<LoginStates> {
       showToast(msg: 'Logout Done Successfully', state: MsgState.success);
       LayOutCubit.get(context).currentIndex = 0;
     });
+  }
+
+
+  Future<void> accountDelete(context) async {
+    emit(DeleteAccountLoading());
+    await firebaseInstance.collection('users').doc(uid).delete().then((value) async {
+      await CacheHelper.removeData(key: 'userUid').then((value) async {
+        await CacheHelper.removeData(key: 'noOfRemoved');
+        uid = '';
+        emit(DeleteAccountSuccess());
+        navigateAndFinish(context, const LoginScreen());
+        showToast(msg: 'Account Deleted Successfully', state: MsgState.success);
+        LayOutCubit.get(context).currentIndex = 0;
+      });
+    });
+    await firebaseInstanceAuth.currentUser!.delete();
+
   }
 }

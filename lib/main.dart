@@ -1,5 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+// import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,7 +15,6 @@ import 'package:masusc/shared/cache-helper/cache-helper.dart';
 import 'package:masusc/shared/constants.dart';
 import 'package:masusc/shared/dio/dio.dart';
 import 'package:masusc/splash/splash.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 import 'on_boarding_screen/on_boarding_screen.dart';
 
@@ -29,31 +28,31 @@ Widget? startScreen;
 //   });
 // }
 
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  NotificationService().showNotification(
-    title: message.notification?.title ?? '',
-    body: message.notification?.body ?? '',
-  );
-}
+// Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+//   NotificationService().showNotification(
+//     title: message.notification?.title ?? '',
+//     body: message.notification?.body ?? '',
+//   );
+// }
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  FirebaseMessaging.onMessage.listen((message) {
-    NotificationService().showNotification(
-      title: message.notification?.title ?? '',
-      body: message.notification?.body ?? '',
-    );
-  });
-  FirebaseMessaging.onMessageOpenedApp.listen((message) {
-    NotificationService().showNotification(
-      title: message.notification?.title ?? '',
-      body: message.notification?.body ?? '',
-    );
-  });
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  // FirebaseMessaging.onMessage.listen((message) {
+  //   NotificationService().showNotification(
+  //     title: message.notification?.title ?? '',
+  //     body: message.notification?.body ?? '',
+  //   );
+  // });
+  // FirebaseMessaging.onMessageOpenedApp.listen((message) {
+  //   NotificationService().showNotification(
+  //     title: message.notification?.title ?? '',
+  //     body: message.notification?.body ?? '',
+  //   );
+  // });
+  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   await CacheHelper.init();
   await DioHelper.init();
   bool? isOnBoardingDone = await CacheHelper.getData(key: 'onBoarding');

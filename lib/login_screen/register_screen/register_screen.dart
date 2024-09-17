@@ -136,7 +136,7 @@ class RegisterScreen extends StatelessWidget {
                           height: 10.h,
                         ),
                         Text(
-                          'phone number',
+                          'phone number (optional)',
                           style: TextStyle(
                             fontSize: 18.0.sp,
                             fontFamily: 'Montserrat',
@@ -156,13 +156,13 @@ class RegisterScreen extends StatelessWidget {
                             controller: phoneController,
                             keyboardType: TextInputType.phone,
                             cursorColor: HexColor('cb0000'),
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'please enter your Phone';
-                              } else {
-                                return null;
-                              }
-                            },
+                            // validator: (value) {
+                            //   if (value!.isEmpty) {
+                            //     return 'please enter your Phone';
+                            //   } else {
+                            //     return null;
+                            //   }
+                            // },
                             autofillHints: const [
                               AutofillHints.telephoneNumber
                             ],
